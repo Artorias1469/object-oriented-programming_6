@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "object-oriented-programming-2"
+name = "object-oriented-programming-6"
 version = "0.1.0"
 description = ""
 authors = ["Artorias1469 <pupas5676@gmail.com>"]
@@ -7,8 +7,16 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-black = "^24.10.0"
 
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+flake8 = "^7.1.1"
+isort = "^5.13.2"
+pre-commit = "^4.0.1"
+mypy = "^1.14.0"
+pytest = "^8.3.4"
+flake8-pyproject = "^1.2.3"
 
 [build-system]
 requires = ["poetry-core"]

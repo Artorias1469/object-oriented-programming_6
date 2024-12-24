@@ -1,16 +1,26 @@
 repos:
   - repo: https://github.com/psf/black
-    rev: 24.4.0 # Используйте актуальную версию
+    rev: 24.10.0
     hooks:
       - id: black
+        args: ['--line-length', '88']
 
   - repo: https://github.com/pycqa/flake8
-    rev: 7.0.0 # Используйте актуальную версию
+    rev: 7.1.1
     hooks:
       - id: flake8
+        additional_dependencies:
+          - flake8-pyproject
+        args: ['--max-line-length=88']
 
   - repo: https://github.com/pre-commit/mirrors-isort
-    rev: v5.10.1 # Используйте актуальную версию
+    rev: v5.10.1
     hooks:
       - id: isort
-   
+        args: ['--profile', 'black']
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.961
+    hooks:
+      - id: mypy
+        args: ['--strict']
